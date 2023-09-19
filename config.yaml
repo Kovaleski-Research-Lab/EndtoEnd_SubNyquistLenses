@@ -1,0 +1,128 @@
+#--------------------------------
+#       General Params
+#--------------------------------
+seed: [True, 1337]
+train: True
+model_id: 'predict_test'
+
+#torch_home: '~/.cache/torch/'
+torch_home: '/develop/data/resolution_constrained_deep_optics/pretrained_models/'
+
+lrn: True
+classifier: True
+
+#--------------------------------
+#       Training Params
+#--------------------------------
+batch_size: 8
+num_epochs: 5
+
+accelerator: 'gpu' 
+gpu_config: [True, [0]]
+
+valid_rate: 1
+
+#--------------------------------
+#       All paths
+#--------------------------------
+#path_root: '/home/mblgh6/Documents/rcdo/'
+#path_root: '/develop/data/resolution_constrained_deep_optics/'
+path_root: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/'
+
+path_data: 'data/'
+path_train: 'train/'
+path_valid: 'valid/'
+path_model: 'my_models/'
+path_results: 'results/'
+
+#path_checkpoint_lrn: '/home/mblgh6/Documents/rcdo/my_models/lrn/'
+#path_checkpoint_lrn: '/develop/data/resolution_constrained_deep_optics/my_models/lrn/'
+path_checkpoint_lrn: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/lrn/'
+
+#path_checkpoint_classifier: '/home/mblgh6/Documents/rcdo/my_models/classifier/'
+#path_checkpoint_classifier: '/develop/data/resolution_constrained_deep_optics/my_models/classifier/'
+path_checkpoint_classifier: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/classifier/'
+
+#path_checkpoint_cooperative: '/home/mblgh6/Documents/rcdo/my_models/cooperative/'
+#path_checkpoint_cooperative: '/develop/data/resolution_constrained_deep_optics/my_models/cooperative/'
+path_checkpoint_cooperative: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/cooperative/'
+
+subset_lrn: "randomInit" 
+subset_classifier: None
+subset_cooperative: None
+
+#--------------------------------
+#       Model Params
+#--------------------------------
+
+#LRN
+num_layers_lrn: 1
+optimizer_lrn: 'ADAM'
+learning_rate_lrn: 3.e-1
+transfer_learn_lrn: False
+load_checkpoint_lrn: False
+objective_function_lrn: 'mse'
+
+#Classifier
+num_classes: 10
+freeze_backbone: False
+num_layers_classifier: 1
+name_classifier: 'resnet18'
+optimizer_classifier: 'ADAM'
+learning_rate_classifier: 0.001
+transfer_learn_classifier: True
+load_checkpoint_classifier: False
+objective_function_classifier: 'cross_entropy'
+
+#Cooperative
+load_checkpoint_cooperative: False
+
+
+#--------------------------------
+#       Physical Params
+#--------------------------------
+wavelength: 1550.e-9
+distance : 0.60264
+#distance : 0.04
+
+#Propagation
+Nxp: 1080
+Nyp: 1080
+Lxp: 8.96e-3
+Lyp: 8.96e-3
+adaptive: True
+
+#Modulation
+Nxm: 1080
+Nym: 1080
+Lxm: 8.96e-3
+Lym: 8.96e-3
+
+modulator_type: 'none'
+# none, phase_only, amplitude_only, complex
+
+phase_initialization: 1
+# 0 random, 1 analytical lens, 2 uniform
+
+amplitude_initialization: 0
+
+#--------------------------------
+#       Datamodule Params
+#--------------------------------
+which: 'MNIST'
+n_cpus: 2
+
+data_split: 'mnist_1000perClass'
+#data_split: 'mnist_100perClass'
+#data_split: 'mnist_10perClass'
+#data_split: 'mnist_1perClass'
+#data_split: 'mnist_single0' #one
+#data_split: 'mnist_single1' #eight
+#data_split: 'mnist_10_1'
+#data_split: 'mnist_10_8'
+#data_split: 'mnist_100_1'
+#data_split: 'mnist_100_8'
+
+wavefront_transform:
+    phase_initialization_strategy: 0
+
