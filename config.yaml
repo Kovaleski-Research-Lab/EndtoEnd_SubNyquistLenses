@@ -25,9 +25,7 @@ valid_rate: 1
 #--------------------------------
 #       All paths
 #--------------------------------
-#path_root: '/home/mblgh6/Documents/rcdo/'
-#path_root: '/develop/data/resolution_constrained_deep_optics/'
-path_root: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/'
+path_root: '/develop/data/resolution_constrained_deep_optics/'
 
 path_data: 'data/'
 path_train: 'train/'
@@ -35,17 +33,11 @@ path_valid: 'valid/'
 path_model: 'my_models/'
 path_results: 'results/'
 
-#path_checkpoint_lrn: '/home/mblgh6/Documents/rcdo/my_models/lrn/'
-#path_checkpoint_lrn: '/develop/data/resolution_constrained_deep_optics/my_models/lrn/'
-path_checkpoint_lrn: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/lrn/'
+path_checkpoint_lrn: '/develop/data/resolution_constrained_deep_optics/my_models/lrn/'
 
-#path_checkpoint_classifier: '/home/mblgh6/Documents/rcdo/my_models/classifier/'
-#path_checkpoint_classifier: '/develop/data/resolution_constrained_deep_optics/my_models/classifier/'
-path_checkpoint_classifier: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/classifier/'
+path_checkpoint_classifier: '/develop/data/resolution_constrained_deep_optics/my_models/classifier/'
 
-#path_checkpoint_cooperative: '/home/mblgh6/Documents/rcdo/my_models/cooperative/'
-#path_checkpoint_cooperative: '/develop/data/resolution_constrained_deep_optics/my_models/cooperative/'
-path_checkpoint_cooperative: '/cgi/data/erdc_xai/resolution_constrained_deep_optics/my_models/cooperative/'
+path_checkpoint_cooperative: '/develop/data/resolution_constrained_deep_optics/my_models/cooperative/'
 
 subset_lrn: "randomInit" 
 subset_classifier: None
